@@ -13,4 +13,4 @@ else:
     msg = comm.recv(source=rank - 1, tag=1337)
     print(f"Rank: {rank}, Message: {msg}")
     if (rank + 1) < size:
-        comm.send(rank, rank + 1, tag=1337)
+        comm.send(obj=rank, dest=rank + 1, tag=1337)
